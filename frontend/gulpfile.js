@@ -5,10 +5,10 @@ const minify = require('gulp-minify');
 const tsProject = ts.createProject('tsconfig.json');
 
 const prepareTsToJs = () => {
-  return tsProject.src().
-      pipe(tsProject()).
-      pipe(minify({noSource: true})).
-      pipe(gulp.dest('./'));
+  return tsProject.src()
+    .pipe(tsProject())
+    .pipe(minify({noSource: true}))
+    .pipe(gulp.dest('./'));
 };
 
 gulp.task('build', prepareTsToJs);
